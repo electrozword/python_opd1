@@ -1,4 +1,9 @@
-class waiter:
+from menu import Menu
+
+class Waiter:
+    def __init__(self, menu):
+        menu = Menu()
+        self.menu = menu
     
     def greet_guest(self):
         print('yo mate, welcome to pizzahuttos')
@@ -20,3 +25,11 @@ class waiter:
         else:
             print("I really don't understand")
             
+    def list_menu(self):
+        for dish in self.menu.contents():
+            print(dish)
+            
+    def take_order(self, order_number):
+        if order_number == 1:
+            answer = "Let me get the menu"
+            self.list_menu()
