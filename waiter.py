@@ -2,7 +2,6 @@ from menu import Menu
 
 class Waiter:
     def __init__(self, menu):
-        menu = Menu()
         self.menu = menu
     
     def greet_guest(self):
@@ -27,7 +26,7 @@ class Waiter:
             
     def list_menu(self):
         for dish in self.menu.contents():
-            print(dish)
+            print(dish.name)
             
     def take_order(self, order_number):
         if order_number == 1:
